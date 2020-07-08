@@ -1,0 +1,19 @@
+{# templates/client/add.html.twig #}
+Formulaire ajout d'article
+{{ form(form, {'action': '/articles/add', 'method': 'POST'}) }}
+{{ message }}
+<h1>Articles Disponibles</h1>
+<ol>
+    {% for article in articles %}
+        <li>Nom : {{ article.label}} - Marque : {{ article.marques.label}} - Prix journalier : {{ article.dailyPrice}} €</li>
+    {% else %}
+    Aucun article disponible
+    {% endfor %}
+</ol>
+
+<h1>Tous les articles</h1>
+<ol>
+    {% for article in allArticles %}
+        <li>Nom : {{ article.label}} - Marque : {{ article.marques.label}} - Prix journalier : {{ article.dailyPrice}} €</li>
+    {% endfor %}
+</ol>

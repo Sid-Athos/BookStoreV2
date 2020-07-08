@@ -1,0 +1,10 @@
+{# templates/rentals/add.html.twig #}
+Formulaire nouvelle location
+{{ form(form, {'action': '/rentals/add', 'method': 'POST'}) }}
+{{ message }}
+<h1>Locations en cours</h1>
+<ol>
+    {% for client in rentals %}
+        <li>Etat : {{ client.state}} - Date : {{ client.dateLocation|date('d-m-Y')}} - client : {{ client.client.lastName}} {{ client.client.firstName}} <a href="{{ path('rentals_edit', {rental_id: client.id}) }}">Ajouter des articles, éditer la location</a>  <a href="{{ path('rentals_return', {rental_id: client.id}) }}">Retour du matériel</a><a href="{{ path('rentals_bill', {rental_id: client.id}) }}">Facture Location</a></li>
+    {% endfor %}
+</ol>

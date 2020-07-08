@@ -1,0 +1,10 @@
+{# templates/client/add.html.twig #}
+Formulaire ajout de clients
+{{ form(form, {'action': '/client/add', 'method': 'POST'}) }}
+{{ message }}
+<h1>Clients</h1>
+<ol>
+    {% for client in clients %}
+        <li>Nom : {{ client.lastName}} - Prénom : {{ client.lastName}} - Adresse : {{ client.address}} {{ client.postCode}} {{ client.city}}</li>
+    {% endfor %}
+</ol>

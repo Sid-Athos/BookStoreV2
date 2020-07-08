@@ -1,0 +1,14 @@
+{# templates/rentals/add.html.twig #}
+Formulaire matériel location, ajout d'un article
+{{ form(form, {'action': '/rentals/edit/confirm', 'method': 'POST'}) }}
+<h1>Contenu actuel location</h1>
+Location numéro {{rental.id}} <br>
+Client : {{rental.client.lastName}} {{rental.client.firstName}} <br>
+Date : Date de début : {{ rental.dateLocation|date('d-m-Y')}} <br>
+<ol>
+    
+    {% for client in rentals %}
+        <li>Article : {{client.article.label}} - Date de début : {{ client.startDate|date('d-m-Y')}} - Prix journalier : {{client.article.dailyprice}} €</li>
+    {% endfor %}
+</ol>
+<a href="{{ }}" download>Télécharger la facture</a>

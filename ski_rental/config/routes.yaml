@@ -1,0 +1,45 @@
+index:
+    path: /lucky/number
+    controller: App\Controller\LuckyController::number
+marques:
+  path: /marques
+  controller: App\Controller\MarquesController::default
+marques_add:
+    path: /marques/add
+    controller: App\Controller\MarquesController::newMarque
+rentals:
+  path: /rentals
+  controller: App\Controller\RentalsController::default
+rentals_add:
+    path: /rentals/add
+    controller: App\Controller\RentalsController::newRental
+rentals_edit:
+    path: /rentals/edit
+    controller: App\Controller\RentalsController::editRental
+rentals_bill:
+    path: /rentals/bill
+    controller: App\Controller\RentalsController::generateBill
+rentals_return:
+    path: /rentals/return
+    controller: App\Controller\RentalsController::returnRental
+rentals_edit_confirm:
+    path: /rentals/edit/confirm
+    controller: App\Controller\RentalsController::modifyRental
+client:
+  path: /client
+  controller: App\Controller\ClientController::default
+client_add:
+    path: /client/add
+    controller: App\Controller\ClientController::newClient
+client_list:
+    path: /client/list
+    controller: App\Controller\ClientController::list
+articles:
+  path: /articles
+  controller: App\Controller\ArticlesController::default
+articles_add:
+    path: /articles/add
+    controller: App\Controller\ArticlesController::newArticle
+articles_list:
+    path: /articles/list
+    controller: App\Controller\ArticlesController::list
