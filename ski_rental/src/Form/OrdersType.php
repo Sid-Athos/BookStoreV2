@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Rentals;
+use App\Entity\Orders;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -11,7 +11,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use App\Entity\Client;
 
-class RentalsType extends AbstractType
+class OrdersType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -35,7 +35,7 @@ class RentalsType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Rentals::class,
+            'data_class' => Orders::class,
         ]);
     }
 }

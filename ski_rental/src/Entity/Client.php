@@ -47,11 +47,11 @@ class Client
     /**
      * @ORM\OneToMany(targetEntity=Rentals::class, mappedBy="client")
      */
-    private $rental;
+    private $order;
 
     public function __construct()
     {
-        $this->rental = new ArrayCollection();
+        $this->order = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -129,28 +129,28 @@ class Client
     /**
      * @return Collection|Rentals[]
      */
-    public function getRental(): Collection
+    public function getOrders(): Collection
     {
-        return $this->rental;
+        return $this->order;
     }
 
-    public function addRental(Rentals $rental): self
+    public function addOrders(Orders $order): self
     {
-        if (!$this->rental->contains($rental)) {
-            $this->rental[] = $rental;
-            $rental->setClient($this);
+        if (!$this->order->contains($order)) {
+            $this->order[] = $order;
+            $order->setClient($this);
         }
 
         return $this;
     }
 
-    public function removeRental(Rentals $rental): self
+    public function removeOrders(Orders $order): self
     {
-        if ($this->rental->contains($rental)) {
-            $this->rental->removeElement($rental);
+        if ($this->order->contains($order)) {
+            $this->order->removeElement($order);
             // set the owning side to null (unless already changed)
-            if ($rental->getClient() === $this) {
-                $rental->setClient(null);
+            if ($order->getClient() === $this) {
+                $order->setClient(null);
             }
         }
 

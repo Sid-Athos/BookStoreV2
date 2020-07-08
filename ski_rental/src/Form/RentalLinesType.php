@@ -3,7 +3,7 @@
 namespace App\Form;
 
 use App\Entity\RentalLines;
-use App\Entity\Rentals;
+use App\Entity\Orders;
 use App\Entity\Articles;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
@@ -21,7 +21,7 @@ class RentalLinesType extends AbstractType
             ->add('endDate')
             ->add('Rental', EntityType::class, [
             // looks for choices from this entity
-            'class' => Rentals::class,
+            'class' => Orders::class,
 
             // uses the User.username property as the visible option string
             'choice_label' => "id",

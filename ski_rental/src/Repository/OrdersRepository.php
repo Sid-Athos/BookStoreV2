@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Entity\Rentals;
+use App\Entity\Orders;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -12,11 +12,11 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Rentals[]    findAll()
  * @method Rentals[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class RentalsRepository extends ServiceEntityRepository
+class OrdersRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Rentals::class);
+        parent::__construct($registry, Orders::class);
     }
 
     // /**

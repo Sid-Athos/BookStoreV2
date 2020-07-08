@@ -5,7 +5,7 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\Rentals;
+use App\Entity\Orders;
 use App\Entity\RentalLines;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Filesystem\Filesystem;
@@ -36,7 +36,7 @@ class RentalsController extends AbstractController
      */
     public function newRental(Request $request){
             // just setup a fresh $task object (remove the example data)
-        $rental = new Rentals();
+        $rental = new Orders();
 
         $form = $this->createForm(RentalsType::class, $rental);
 

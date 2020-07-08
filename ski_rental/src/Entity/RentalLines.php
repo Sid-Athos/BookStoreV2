@@ -21,7 +21,7 @@ class RentalLines
      * @ORM\ManyToOne(targetEntity=Rentals::class)
      * @ORM\JoinColumn(nullable=false)
      */
-    private $Rental;
+    private $Orders;
 
     /**
      * @ORM\ManyToOne(targetEntity=Articles::class)
@@ -44,14 +44,14 @@ class RentalLines
         return $this->id;
     }
 
-    public function getRental(): ?Rentals
+    public function getOrders(): ?Orders
     {
-        return $this->Rental;
+        return $this->Orders;
     }
 
-    public function setRental(?Rentals $Rental): self
+    public function setOrders(?Orders $Orders): self
     {
-        $this->Rental = $Rental;
+        $this->Orders = $Orders;
 
         return $this;
     }
